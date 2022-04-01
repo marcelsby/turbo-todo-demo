@@ -6,6 +6,11 @@ services:
     volumes:
       - redis-data:/data
   backend:
+    environment:
+      TODOTURBO_REDIS_HOSTNAME: ${REDIS_HOSTNAME}
+      TODOTURBO_REDIS_PORT: ${REDIS_PORT}
+    depends_on:
+      - redis
     container_name: todo-turbo-backend
     build: .
     ports:

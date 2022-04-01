@@ -5,3 +5,7 @@ spring:
   devtools:
     remote:
       secret: 123
+todoTurbo:
+  db:
+    hostname: ${TODOTURBO_REDIS_HOSTNAME}
+    port: ${TODOTURBO_REDIS_PORT}
