@@ -11,7 +11,9 @@ import java.util.UUID;
 public class Todo implements Serializable {
 
     private UUID id;
+
     private String content;
+
     private boolean isDone;
 
 }
