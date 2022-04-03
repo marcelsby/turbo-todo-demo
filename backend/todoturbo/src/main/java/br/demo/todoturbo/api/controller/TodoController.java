@@ -1,30 +1,31 @@
 package br.demo.todoturbo.api.controller;
 
 import br.demo.todoturbo.domain.model.Todo;
-import br.demo.todoturbo.domain.repository.TodoRepository;
+import br.demo.todoturbo.domain.service.TodoService;
 import org.springframework.beans.factory.annotation.Autowired;
-import org.springframework.web.bind.annotation.*;
+import org.springframework.http.ResponseEntity;
+import org.springframework.web.bind.annotation.GetMapping;
+import org.springframework.web.bind.annotation.RequestMapping;
+import org.springframework.web.bind.annotation.RestController;
 
 import java.util.List;
-import java.util.UUID;
 
 @RequestMapping("/todos")
 @RestController
 public class TodoController {
 
     @Autowired
-    TodoRepository todoRepository;
+    TodoService service;
 
     @GetMapping
-    public List<Todo> listar() {
-        return (List<Todo>) todoRepository.findAll();
-    }
+    public ResponseEntity<List<Todo>> listar() {
+        var resultadoListagemTodos = service.listar();
 
-    @PostMapping
-    public Todo cadastrar(@RequestBody Todo novoTodo) {
-        novoTodo.setId(UUID.randomUUID());
-        novoTodo.setDone(false);
-        return todoRepository.save(novoTodo);
+        if (resultadoListagemTodos.isPresent()) {
+            return ResponseEntity.ok(resultadoListagemTodos.get());
+        }
+
+        return ResponseEntity.noContent().build();
     }
 
 }
