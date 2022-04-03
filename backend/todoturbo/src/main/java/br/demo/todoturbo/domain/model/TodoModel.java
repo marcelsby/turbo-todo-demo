@@ -4,16 +4,15 @@ import lombok.Data;
 import org.springframework.data.redis.core.RedisHash;
 
 import java.io.Serializable;
-import java.util.UUID;
 
 @Data
 @RedisHash("Todo")
-public class Todo implements Serializable {
+public class TodoModel implements Serializable {
 
-    private UUID id;
+    private String id;
 
-    private String content;
+    private String conteudo;
 
-    private boolean isDone;
+    private boolean concluido;
 
 }
