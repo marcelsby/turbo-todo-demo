@@ -26,9 +26,9 @@ public class TodoService {
     }
 
     public TodoOutput cadastrar(CriarTodoInput criarTodoInput) {
-        String conteudoRecebido = criarTodoInput.getConteudo();
+        String descricaoRecebida = criarTodoInput.getDescricao();
 
-        if (conteudoRecebido == null || conteudoRecebido.isEmpty()) {
+        if (descricaoRecebida == null || descricaoRecebida.isEmpty()) {
             throw new RegraNegocioException("Não é possível criar uma tarefa sem um conteúdo.");
         }
 
@@ -39,7 +39,7 @@ public class TodoService {
 
     public Optional<TodoOutput> atualizar(String id, AtualizarTodoInput atualizarTodoInput) {
         // Verifica se pelo menos um campo vindo da requisição está preenchido
-        if (atualizarTodoInput.getConcluido() == null && atualizarTodoInput.getConteudo() == null) {
+        if (atualizarTodoInput.getConcluido() == null && atualizarTodoInput.getDescricao() == null) {
             throw new RegraNegocioException("Para realizar uma atualização, pelo menos um campo deve ser preenchido.");
         }
 
@@ -51,9 +51,9 @@ public class TodoService {
         }
 
         // Verifica se o conteúdo enviado é nulo, em caso positivo ele seta o conteúdo antigo, para ser o novo conteúdo
-        if (atualizarTodoInput.getConteudo() == null) {
-            var conteudoAntigo = todoBuscado.get().getConteudo();
-            atualizarTodoInput.setConteudo(conteudoAntigo);
+        if (atualizarTodoInput.getDescricao() == null) {
+            var descricaoAntiga = todoBuscado.get().getDescricao();
+            atualizarTodoInput.setDescricao(descricaoAntiga);
         }
 
         // Verifica se o status de concluído é nulo, em caso positivo ele seta o valor antigo, para ser o novo status de concluído

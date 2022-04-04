@@ -9,12 +9,12 @@ import lombok.ToString;
 @Setter
 public class AtualizarTodoInput {
 
-    private String conteudo;
+    private String descricao;
 
     private Boolean concluido;
 
-    public void setConteudo(String conteudo) {
-        this.conteudo = conteudo.trim();
+    public void setDescricao(String descricao) {
+        this.descricao = descricao.trim();
     }
 
 }

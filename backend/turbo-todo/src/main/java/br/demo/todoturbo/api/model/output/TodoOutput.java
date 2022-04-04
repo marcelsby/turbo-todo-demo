@@ -9,7 +9,7 @@ public class TodoOutput {
 
     private String id;
 
-    private String conteudo;
+    private String descricao;
 
     private boolean concluido;
 
