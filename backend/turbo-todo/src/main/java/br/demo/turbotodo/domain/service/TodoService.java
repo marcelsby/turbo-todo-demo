@@ -1,12 +1,12 @@
-package br.demo.todoturbo.domain.service;
+package br.demo.turbotodo.domain.service;
 
-import br.demo.todoturbo.api.mappers.TodoMapper;
-import br.demo.todoturbo.api.model.input.AtualizarDescricaoTodoInput;
-import br.demo.todoturbo.api.model.input.CriarTodoInput;
-import br.demo.todoturbo.api.model.output.TodoOutput;
-import br.demo.todoturbo.domain.exception.RegraNegocioException;
-import br.demo.todoturbo.domain.model.TodoModel;
-import br.demo.todoturbo.domain.repository.TodoRepository;
+import br.demo.turbotodo.api.mappers.TodoMapper;
+import br.demo.turbotodo.api.model.input.AtualizarDescricaoTodoInput;
+import br.demo.turbotodo.api.model.input.CriarTodoInput;
+import br.demo.turbotodo.api.model.output.TodoOutput;
+import br.demo.turbotodo.domain.exception.RegraNegocioException;
+import br.demo.turbotodo.domain.model.TodoModel;
+import br.demo.turbotodo.domain.repository.TodoRepository;
 import lombok.AllArgsConstructor;
 import org.springframework.stereotype.Service;
 

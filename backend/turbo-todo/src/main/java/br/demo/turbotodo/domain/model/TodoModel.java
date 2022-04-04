@@ -1,4 +1,4 @@
-package br.demo.todoturbo.domain.model;
+package br.demo.turbotodo.domain.model;
 
 import lombok.Data;
 import org.springframework.data.redis.core.RedisHash;

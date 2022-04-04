@@ -1,10 +1,10 @@
-package br.demo.todoturbo.api.controller;
+package br.demo.turbotodo.api.controller;
 
-import br.demo.todoturbo.api.model.input.AtualizarDescricaoTodoInput;
-import br.demo.todoturbo.api.model.input.CriarTodoInput;
-import br.demo.todoturbo.api.model.output.TodoOutput;
-import br.demo.todoturbo.domain.model.TodoModel;
-import br.demo.todoturbo.domain.service.TodoService;
+import br.demo.turbotodo.api.model.input.AtualizarDescricaoTodoInput;
+import br.demo.turbotodo.api.model.input.CriarTodoInput;
+import br.demo.turbotodo.api.model.output.TodoOutput;
+import br.demo.turbotodo.domain.model.TodoModel;
+import br.demo.turbotodo.domain.service.TodoService;
 import lombok.AllArgsConstructor;
 import lombok.extern.slf4j.Slf4j;
 import org.modelmapper.ModelMapper;

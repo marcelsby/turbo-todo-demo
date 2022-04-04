@@ -1,7 +1,7 @@
-package br.demo.todoturbo.api.controller;
+package br.demo.turbotodo.api.controller;
 
-import br.demo.todoturbo.api.model.input.CriarTodoInput;
-import br.demo.todoturbo.domain.service.TodoService;
+import br.demo.turbotodo.api.model.input.CriarTodoInput;
+import br.demo.turbotodo.domain.service.TodoService;
 import lombok.AllArgsConstructor;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.RequestMapping;

@@ -1,4 +1,4 @@
-package br.demo.todoturbo.api.model.output;
+package br.demo.turbotodo.api.model.output;
 
 import lombok.Getter;
 import lombok.Setter;

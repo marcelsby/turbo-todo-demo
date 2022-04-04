@@ -1,4 +1,4 @@
-package br.demo.todoturbo.domain.exception;
+package br.demo.turbotodo.domain.exception;
 
 public class RegraNegocioException extends RuntimeException {
 

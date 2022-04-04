@@ -1,4 +1,4 @@
-package br.demo.todoturbo.config;
+package br.demo.turbotodo.config;
 
 import org.springframework.beans.factory.annotation.Value;
 import org.springframework.context.annotation.Bean;

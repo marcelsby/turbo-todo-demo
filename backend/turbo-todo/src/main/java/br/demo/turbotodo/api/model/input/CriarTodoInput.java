@@ -1,4 +1,4 @@
-package br.demo.todoturbo.api.model.input;
+package br.demo.turbotodo.api.model.input;
 
 import lombok.AllArgsConstructor;
 import lombok.Getter;
