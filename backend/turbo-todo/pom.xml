@@ -9,7 +9,7 @@
 		<relativePath/> <!-- lookup parent from repository -->
 	</parent>
 	<groupId>br.demo</groupId>
-	<artifactId>todo-turbo</artifactId>
+	<artifactId>turbo-todo</artifactId>
 	<version>0.0.1-SNAPSHOT</version>
 	<name>todo-turbo</name>
 	<description>Todo demo project for Spring Boot</description>
