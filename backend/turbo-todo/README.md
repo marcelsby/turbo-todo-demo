@@ -1,15 +1,4 @@
-
-# Turbo To do
-
-Uma aplicação web de lista de tarefas criada para demonstrar o uso de Spring Boot no back end.
-
-
-## Autores
-
-- [@marcelsby](https://www.github.com/marcelsby)
-
-
-## Executar localmente
+## Instruções para executar localmente
 
 Clone o projeto
 
@@ -56,3 +45,6 @@ Execute o script de incialização
 ./start 
 ```
 
+## Extras
+
+[Referência da API] (https://github.com/marcelsby/turbo-todo-demo/blob/master/backend/turbo-todo/API.md)

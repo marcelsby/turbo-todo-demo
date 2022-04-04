@@ -5,6 +5,8 @@ services:
     command: ["redis-server", "--appendonly", "yes", "--save", "60", "1", "--loglevel", "warning"]
     volumes:
       - redis-data:/data
+    ports:
+      - "6379:6379"
   backend:
     environment:
       TODOTURBO_REDIS_HOSTNAME: ${REDIS_HOSTNAME}
