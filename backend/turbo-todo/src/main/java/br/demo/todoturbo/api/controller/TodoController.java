@@ -1,6 +1,6 @@
 package br.demo.todoturbo.api.controller;
 
-import br.demo.todoturbo.api.model.input.AtualizarTodoInput;
+import br.demo.todoturbo.api.model.input.AtualizarDescricaoTodoInput;
 import br.demo.todoturbo.api.model.input.CriarTodoInput;
 import br.demo.todoturbo.api.model.output.TodoOutput;
 import br.demo.todoturbo.domain.model.TodoModel;
@@ -44,8 +44,10 @@ public class TodoController {
     }
 
     @PutMapping("/{id}")
-    public ResponseEntity<TodoOutput> atualizar(@PathVariable String id, @RequestBody AtualizarTodoInput atualizarTodoInput) {
-        var resultadoAtualizacao = service.atualizar(id, atualizarTodoInput);
+    public ResponseEntity<TodoOutput> atualizarDescricao(@PathVariable String id,
+                                                         @RequestBody AtualizarDescricaoTodoInput atualizarDescricaoTodoInput) {
+        // TODO: tratar a exception que pode vir desse método
+        var resultadoAtualizacao = service.atualizarDescricao(id, atualizarDescricaoTodoInput);
 
         if (resultadoAtualizacao.isPresent()) {
             log.info("Tarefa de ID: " + id + " atualizada com sucesso!");

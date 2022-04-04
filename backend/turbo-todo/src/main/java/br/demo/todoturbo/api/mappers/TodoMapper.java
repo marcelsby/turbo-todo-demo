@@ -1,6 +1,6 @@
 package br.demo.todoturbo.api.mappers;
 
-import br.demo.todoturbo.api.model.input.AtualizarTodoInput;
+import br.demo.todoturbo.api.model.input.AtualizarDescricaoTodoInput;
 import br.demo.todoturbo.api.model.input.CriarTodoInput;
 import br.demo.todoturbo.api.model.output.TodoOutput;
 import br.demo.todoturbo.domain.model.TodoModel;
@@ -18,8 +18,8 @@ public class TodoMapper {
         return modelMapper.map(criarTodoInput, TodoModel.class);
     }
 
-    public TodoModel updateToEntity(AtualizarTodoInput atualizarTodoInput) {
-        return modelMapper.map(atualizarTodoInput, TodoModel.class);
+    public TodoModel updateToEntity(AtualizarDescricaoTodoInput atualizarDescricaoTodoInput) {
+        return modelMapper.map(atualizarDescricaoTodoInput, TodoModel.class);
     }
 
     public TodoOutput toView(TodoModel todoModel) {

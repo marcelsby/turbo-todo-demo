@@ -1,7 +1,7 @@
 package br.demo.todoturbo.domain.service;
 
 import br.demo.todoturbo.api.mappers.TodoMapper;
-import br.demo.todoturbo.api.model.input.AtualizarTodoInput;
+import br.demo.todoturbo.api.model.input.AtualizarDescricaoTodoInput;
 import br.demo.todoturbo.api.model.input.CriarTodoInput;
 import br.demo.todoturbo.api.model.output.TodoOutput;
 import br.demo.todoturbo.domain.exception.RegraNegocioException;
@@ -37,12 +37,7 @@ public class TodoService {
         return todoMapper.toView(novoTodo);
     }
 
-    public Optional<TodoOutput> atualizar(String id, AtualizarTodoInput atualizarTodoInput) {
-        // Verifica se pelo menos um campo vindo da requisição está preenchido
-        if (atualizarTodoInput.getConcluido() == null && atualizarTodoInput.getDescricao() == null) {
-            throw new RegraNegocioException("Para realizar uma atualização, pelo menos um campo deve ser preenchido.");
-        }
-
+    public Optional<TodoOutput> atualizarDescricao(String id, AtualizarDescricaoTodoInput atualizarDescricaoTodoInput) {
         var todoBuscado = repository.findById(id);
 
         // Verifica se o to do está cadastrado
@@ -50,20 +45,17 @@ public class TodoService {
             return Optional.empty();
         }
 
-        // Verifica se o conteúdo enviado é nulo, em caso positivo ele seta o conteúdo antigo, para ser o novo conteúdo
-        if (atualizarTodoInput.getDescricao() == null) {
-            var descricaoAntiga = todoBuscado.get().getDescricao();
-            atualizarTodoInput.setDescricao(descricaoAntiga);
-        }
+        // Verifica se a conteúdo enviada é nula ou está em branco,
+        // em caso positivo ele lança uma exceção
 
-        // Verifica se o status de concluído é nulo, em caso positivo ele seta o valor antigo, para ser o novo status de concluído
-        if (atualizarTodoInput.getConcluido() == null) {
-            var isConcluidoAntigo = todoBuscado.get().isConcluido();
-            atualizarTodoInput.setConcluido(isConcluidoAntigo);
+        var descricaoRecebida = atualizarDescricaoTodoInput.getDescricao();
+
+        if (descricaoRecebida == null || descricaoRecebida.isEmpty()) {
+            throw new RegraNegocioException("Para atualizar uma tarefa é necessário que a descrição esteja preenchida.");
         }
 
         // Monta o to do atualizado
-        var todoAtualizado = todoMapper.updateToEntity(atualizarTodoInput);
+        var todoAtualizado = todoMapper.updateToEntity(atualizarDescricaoTodoInput);
 
         todoAtualizado.setId(id);
 
