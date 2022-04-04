@@ -46,7 +46,6 @@ public class TodoController {
     @PatchMapping("/{id}")
     public ResponseEntity<TodoOutput> atualizarDescricao(@PathVariable String id,
                                                          @RequestBody AtualizarDescricaoTodoInput atualizarDescricaoTodoInput) {
-        // TODO: tratar a exception que pode vir desse método
         var resultadoAtualizacao = service.atualizarDescricao(id, atualizarDescricaoTodoInput);
 
         if (resultadoAtualizacao.isPresent()) {
