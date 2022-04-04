@@ -43,7 +43,7 @@ public class TodoController {
         return service.cadastrar(criarTodoInput);
     }
 
-    @PutMapping("/{id}")
+    @PatchMapping("/{id}")
     public ResponseEntity<TodoOutput> atualizarDescricao(@PathVariable String id,
                                                          @RequestBody AtualizarDescricaoTodoInput atualizarDescricaoTodoInput) {
         // TODO: tratar a exception que pode vir desse método
@@ -56,6 +56,17 @@ public class TodoController {
 
         log.info("Não foi possível completar a operação, pois a tarefa não foi encontrada!");
         return ResponseEntity.notFound().build();
+    }
+
+    @PatchMapping("/{id}/alternar")
+    public ResponseEntity<Object> alternarEstadoConcluida(@PathVariable String id) {
+        var resultadoAtualizacao = service.alternarEstadoConcluida(id);
+
+        if (resultadoAtualizacao.isEmpty()) {
+            return ResponseEntity.notFound().build();
+        }
+
+        return ResponseEntity.ok(resultadoAtualizacao.get());
     }
 
     @DeleteMapping("/{id}")

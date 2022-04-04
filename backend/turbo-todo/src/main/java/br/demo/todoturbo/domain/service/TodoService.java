@@ -66,6 +66,24 @@ public class TodoService {
         return Optional.of(todoMapper.toView(todoAtualizado));
     }
 
+    public Optional<TodoOutput> alternarEstadoConcluida(String id) {
+        var todoBuscado = repository.findById(id);
+
+        if (todoBuscado.isEmpty()) {
+            return Optional.empty();
+        }
+
+        var estadoAlternado = !todoBuscado.get().isConcluido();
+
+        var todoAtualizado = todoBuscado.get();
+
+        todoAtualizado.setConcluido(estadoAlternado);
+
+        repository.save(todoAtualizado);
+
+        return Optional.of(todoMapper.toView(todoAtualizado));
+    }
+
     public boolean excluir(String id) {
         if (!repository.existsById(id)) {
             return false;
