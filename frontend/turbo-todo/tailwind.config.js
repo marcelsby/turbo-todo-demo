@@ -4,7 +4,6 @@ module.exports = {
     extend: {
       colors: {
         brandGreen: {
-          400: "#B5E593",
           500: "#9CE07B",
           600: "#8FCE71",
         },
