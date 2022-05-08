@@ -1,0 +1,9 @@
+div#logo-text {
+    font-size: 40px;
+    font-family: 'Alfa Slab One', cursive;
+    text-align: center;
+}
+
+img#logo-svg {
+    border-color: #333;
+}
