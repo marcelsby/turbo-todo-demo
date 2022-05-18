@@ -1,11 +1,10 @@
 import { CheckSquare, PencilSimple } from "phosphor-react";
-import { TaskProps } from ".";
+import { SpecificTaskProps } from ".";
 
-export function TaskPendent({ key, content }: TaskProps) {
+export function TaskPendent({ content }: SpecificTaskProps) {
     return (
         <>
             <span
-                id={key}
                 className="p-3 rounded-lg shadow-md w-full bg-brandCream-400 outline-0 flex items-center justify-between"
             >
                 {content}

@@ -2,13 +2,16 @@ import { TaskDone } from "./TaskDone"
 import { TaskPendent } from "./TaskPendent"
 
 export interface TaskProps {
-    key: string,
     content: string,
-    isDone?: boolean
+    isDone: boolean
 }
 
-export function Task({ key, content, isDone }: TaskProps) {
+export interface SpecificTaskProps {
+    content: string,
+}
+
+export function Task({ content, isDone }: TaskProps) {
     return (
-        isDone ? <TaskDone key={key} content={content} /> : <TaskPendent key={key} content={content} />
+        isDone ? <TaskDone content={content} /> : <TaskPendent content={content} />
     )
 }

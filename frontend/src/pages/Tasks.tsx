@@ -1,8 +1,21 @@
+import axios from "axios";
 import { Plus } from "phosphor-react";
+import { useEffect, useState } from "react";
 import { Logo } from "../components/Logo";
 import { Task } from "../components/Task";
 
+const baseURL = "http://localhost:8080/todos"
+
 export function Tasks() {
+    const [tasks, setTasks] = useState([])
+
+    useEffect(() => {
+        axios.get(baseURL).then(response => {
+            setTasks(response.data)
+            console.log(response.data)
+        })
+    }, [])
+
     return (
         <main className="h-screen bg-brandCream-500">
             <div className="flex flex-col items-center justify-start">
@@ -29,7 +42,7 @@ export function Tasks() {
                         className="flex flex-col items-center gap-5"
                     >
                         <Task key="f8b9c3b4-e70d-4d76-896a-fdee1e235fc4" content="Fazer compras para cozinhar o jantar" isDone={false} />
-                        <Task key="f2a92ddc-e710-4a0a-a3a5-881d79067d97" content="Colocar comida para os gatos" isDone={false} />
+                        <Task key="f2a92ddc-e710-4a0a-a3a5-881d79067d97" content="Colocar comkeya para os gatos" isDone={false} />
                         <Task key="ded672f5-d6da-45ae-9cde-a4d32db0112d" content="Tarefa realizada" isDone={true} />
                     </div>
                 </div>
