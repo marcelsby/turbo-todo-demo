@@ -47,4 +47,4 @@ Execute o script de incialização
 
 ## Extras
 
-[Referência da API] (https://github.com/marcelsby/turbo-todo-demo/blob/master/backend/turbo-todo/API.md)
+[Referência da API](https://github.com/marcelsby/turbo-todo-demo/blob/master/backend/turbo-todo/API.md)
