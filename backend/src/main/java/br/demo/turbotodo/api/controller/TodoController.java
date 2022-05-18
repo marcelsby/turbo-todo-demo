@@ -15,8 +15,8 @@ import org.springframework.web.bind.annotation.*;
 import java.util.List;
 
 @Slf4j
-@CrossOrigin
 @RequestMapping("/todos")
+@CrossOrigin(methods = {RequestMethod.GET, RequestMethod.POST, RequestMethod.DELETE, RequestMethod.PATCH})
 @AllArgsConstructor
 @RestController
 public class TodoController {
@@ -58,7 +58,7 @@ public class TodoController {
         return ResponseEntity.notFound().build();
     }
 
-    @PatchMapping("/{id}/alternar")
+    @PatchMapping(value = "/{id}/alternar")
     public ResponseEntity<Object> alternarEstadoConcluida(@PathVariable String id) {
         var resultadoAtualizacao = service.alternarEstadoConcluida(id);
 
