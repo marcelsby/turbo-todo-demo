@@ -1,7 +1,7 @@
 import { Trash } from "phosphor-react";
-import { SpecificTaskProps } from ".";
+import { TaskDoneProps } from ".";
 
-export function TaskDone({ content }: SpecificTaskProps) {
+export function TaskDone({ content, deleteTask }: TaskDoneProps) {
     return (
         <span
             className="p-3 rounded-lg shadow-md w-full bg-brandCream-400 outline-0 flex items-center justify-between">
@@ -9,7 +9,7 @@ export function TaskDone({ content }: SpecificTaskProps) {
                 {content}
             </span>
             <div id="actions" className="flex">
-                <button className="hover:text-brandRed">
+                <button className="hover:text-brandRed" onClick={deleteTask}>
                     <Trash size={32} />
                 </button>
             </div>

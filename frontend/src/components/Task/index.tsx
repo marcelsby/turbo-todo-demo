@@ -3,15 +3,23 @@ import { TaskPendent } from "./TaskPendent"
 
 export interface TaskProps {
     content: string,
-    isDone: boolean
+    isDone: boolean,
+    markTaskAsDone: () => void,
+    deleteDoneTask: () => void
 }
 
-export interface SpecificTaskProps {
+export interface TaskPendentProps {
     content: string,
+    markTaskAsDone: () => void,
 }
 
-export function Task({ content, isDone }: TaskProps) {
+export interface TaskDoneProps {
+    content: string,
+    deleteTask: () => void
+}
+
+export function Task({ content, isDone, markTaskAsDone, deleteDoneTask }: TaskProps) {
     return (
-        isDone ? <TaskDone content={content} /> : <TaskPendent content={content} />
+        isDone ? <TaskDone content={content} deleteTask={deleteDoneTask} /> : <TaskPendent content={content} markTaskAsDone={markTaskAsDone} />
     )
 }

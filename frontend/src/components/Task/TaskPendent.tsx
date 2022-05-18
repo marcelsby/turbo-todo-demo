@@ -1,7 +1,7 @@
 import { CheckSquare, PencilSimple } from "phosphor-react";
-import { SpecificTaskProps } from ".";
+import { TaskPendentProps } from ".";
 
-export function TaskPendent({ content }: SpecificTaskProps) {
+export function TaskPendent({ content, markTaskAsDone }: TaskPendentProps) {
     return (
         <>
             <span
@@ -9,10 +9,10 @@ export function TaskPendent({ content }: SpecificTaskProps) {
             >
                 {content}
                 <div id="actions" className="flex">
-                    <button className="hover:text-brandBlue">
+                    {/* <button className="hover:text-brandBlue">
                         <PencilSimple size={32} />
-                    </button>
-                    <button className="hover:text-brandGreen-600">
+                    </button> */}
+                    <button className="hover:text-brandGreen-600" onClick={markTaskAsDone}>
                         <CheckSquare size={32} />
                     </button>
                 </div>
